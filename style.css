@@ -31,3 +31,63 @@
     margin-right: 5px;
 
 }
+
+#right{
+    background-color: gray;
+    float: right;
+    height: 800px;
+    width: 600px;
+}
+.roadmap{
+    background-color: rgb(216, 193, 162);
+    height: 100px;
+    width: 100px;
+}
+.suggetionbox{
+    background-color: bisque;
+    height: 100px;
+    width: 100px;
+}
+
+/* Keyframes to animate progress from 0 to 75% */
+    @keyframes progress-animation {
+      to { --progress-value: 75; }
+    }
+
+    .donut-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: sans-serif;
+      margin-top: 50px;
+    }
+
+    .donut-progress {
+      /* Width and height of the donut chart */
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      
+      /* Center the inner text */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      /* Radial gradient creates the inner hollow circle (white 79% to 80%) */
+      /* Conic gradient draws the active colored track and the grey background track */
+      background: 
+        radial-gradient(closest-side, white 79%, transparent 80% 100%),
+        conic-gradient(#49b8fe calc(var(--progress-value) * 1%), #e0e0e0 0);
+      
+      /* Trigger the 2-second fill animation on page load */
+      animation: progress-animation 2s 1 forwards ease-out;
+    }
+
+    /* Dynamically read and output the numerical value using CSS counters */
+    .donut-progress::before {
+      counter-reset: percentage var(--progress-value);
+      content: counter(percentage) "%";
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+      animation: progress-animation 2s 1 forwards ease-out;}
