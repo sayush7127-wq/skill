@@ -18,12 +18,33 @@
            <form action="/search" method="GET">
            <input type="search" id="site-search" name="q" placeholder="Type to search..." />
            </form>
+           
         </div>
         <div class=" profile">
-          <button><a href="">profile</a></button>
-        </div>
-        
+          <button>profile</button>
+          <button><option>job type</option></button>
+          <button>location</button>
+          <button>bookmark</button>
+        </div>   
+
+        <div class="panel">
+
+    <div class="head">
+      <span id="count">Found 5 internships</span>
+      <select id="sort">
+        <option value="match">Most relevant</option>
+        <option value="new">Newest</option>
+      </select>
     </div>
 
+   <ul class="jobs" id="jobs">
+     
+    </ul>
+
+    </div>
+
+    
+
+     
 </body>
 </html>
